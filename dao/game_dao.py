@@ -8,7 +8,7 @@ from model.player import Player
 from model.vessel import Vessel
 from model.game import Game
 import select
-from numpy import where  
+from numpy import where
 
 
 engine = create_engine('sqlite:////tmp/tdlog.db', echo=True, future=True)
@@ -94,7 +94,7 @@ class GameDao:
         self.game.id      == game_entity.id
         self.game.players == game_entity.players
         return self.game()
-        
+
 
     def find_game(self, game_id: int) -> Game:
         stmt = select(GameEntity).numpy.where(GameEntity.id == game_id)
